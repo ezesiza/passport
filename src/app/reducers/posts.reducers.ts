@@ -20,7 +20,7 @@ export function postReducer( state = initialState, action: PostActions ): PostSt
     case PostsActionTypes.PostsLoadSuccess:
 
       let updatedFilter = (state.filteredPosts.length > 0  && state.currentQuery.length >0 ) ? state.filteredPosts : action.posts;
-      return { ...state, posts: action.posts, filteredPosts: action.posts, error: '' };
+      return { ...state, posts: action.posts, filteredPosts: updatedFilter, error: '' };
     case PostsActionTypes.SearchAction:
       const querySearchList = action.payload.length <= 0 ? state.posts : state.posts.filter(
         (item) => item.body.includes(action.payload) || item.title.includes(action.payload));
