@@ -1,0 +1,20 @@
+<div *ngIf="!posts || posts.length <=0">
+  No Post to display
+</div>
+<div class="acctab"  *ngFor="let item of posts">
+  <p-accordion [multiple]="true">
+  <p-accordionTab header="Post Id" >
+      <p>{{item.id}}</p>
+  </p-accordionTab>
+  <p-accordionTab header="Post Title">
+      <p>{{item.title}}</p>
+  </p-accordionTab>
+  <p-accordionTab header="Post Body">
+      <p>{{item.body}}</p>
+      <a [routerLink]="['/post', item.id]">Go to post page</a>
+  </p-accordionTab>
+</p-accordion>
+<br>
+</div>
+
+

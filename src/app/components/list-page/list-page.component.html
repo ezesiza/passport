@@ -1,0 +1,6 @@
+<div class="container">
+  <span class="top-search">
+  </span>
+    <filter-search id="search" (queryEvt)="filterInputChange$.next($event)"></filter-search>
+  <accordion [posts]="filteredQueryPost$ | async"></accordion>
+</div>
